@@ -33,6 +33,11 @@ class SimpleUserAgent
     !!(user_agent =~ /BlackBerry/)
   end
   
+  def self.is_android?(request_or_user_agent)
+    user_agent = get_user_agent(request_or_user_agent)
+    !!(user_agent =~ /Android/)
+  end
+  
   def self.is_apple?(request_or_user_agent)
     user_agent = get_user_agent(request_or_user_agent)
     !!(user_agent =~ /(Mobile\/.+Safari)/) || !!(user_agent =~ /OS\s+[X9]/)
